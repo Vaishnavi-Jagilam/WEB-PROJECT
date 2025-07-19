@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% block title %}Menu{% endblock title %}
+
+{% block body %}
+
+<div class="filter">
+    <div class="filterLabel">
+        <h2 style="color: white;">Filter By: </h2>
+    </div>
+
+    <div class="filterOptions">
+        <div class="filterPrice">
+            <a href="/menu/filterByPrice"><button style="background-color: #f12424; color: white;">Price</button></a>
+        </div>
+        
+        <div class="filterRating">
+            <a href="/menu/filterByRating"><button style="background-color: #f12424; color: white;">Rating</button></a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .filter {
+        color: white;
+        margin-top: 10%;
+    }
+    .filterLabel {
+        text-align: center;
+    }
+    .filterOptions {
+        display: flex;
+        justify-content: center;
+    }
+    .filterPrice,
+    .filterRating {
+        margin: 0 10px;
+    }
+</style>
+        
+
+    </div>
+
+    <div class="orders">
+        {% for  i in range(foods|length) %}
+
+        <div class="orderCard">
+            <div class="orderImage">
+                <img src="/static/images/{{ foods[i][1] }}" alt="">
+
+            </div>
+            <div class="orderTitle">
+                <h2>{{ foods[i][3] }}</h2>
+
+            </div>
+
+            <div class="orderPrice">
+
+                <p>Rs. {{ foods[i][2] }}</p>
+            </div>
+
+            {% for j in range(foodnosAndRates|length) %}
+                {% if foods[i][0] == foodnosAndRates[j][0] %}
+                    <div class="orderRating">
+                        <p style="margin-bottom: 3px;"> {{ "%.2f"|format(foodnosAndRates[j][1]) }} ({{ foodnosAndRates[j][2] }})</p>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="orderButton">
+                <a href="/menu/{{ foods[i][0] }}"><button>ORDER NOW</button></a>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+{% endblock body %}
