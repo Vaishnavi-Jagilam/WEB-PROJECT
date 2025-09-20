@@ -1,2 +1,3 @@
 # Simple Restaurant Management Using Flask framework
+https://1drv.ms/v/c/7f5cb87b51e6b9ab/EYCIPJKdh3NHi3pBYM2eU2cBVk8WIrE6Vt9S1f9xL7SnkA?e=Zbx2rd
 The project Simple Restaurant Management System with Flask Web Framework aims to develop a basic web application to manage restaurant operations using Flask without relying on an external database management system. Flask, a lightweight and flexible web framework in Python, will be used to facilitate the implementation of CRUD (Create, Read, Update, Delete) functionalities for managing restaurant data, such as menu items, orders, and staff information
